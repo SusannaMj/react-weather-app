@@ -6,8 +6,9 @@ export default function App() {
       <h1>Weather App</h1>
       <footer>
         This project has been coded by Susanna Mjetk and is{" "}
-        <a href="/">open-sourced on GitHub</a>
-        <div>Hello</div>
+        <a href="https://silver-kelpie-c76d5e.netlify.app" target="_blank">
+          open-sourced on GitHub
+        </a>
       </footer>
     </div>
   );
