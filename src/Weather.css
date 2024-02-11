@@ -27,13 +27,13 @@
 
 .Weather .temperature {
   font-weight: bold;
-  font-size: 60px;
+  font-size: 110px;
 }
 
 .Weather .unit {
   position: relative;
-  top: -28px;
-  font-size: 20px;
+  top: -53px;
+  font-size: 30px;
 }
 
 .Weather .overview {
