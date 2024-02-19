@@ -9,17 +9,22 @@ export default function WeatherForecast(props) {
   function showForecast(response) {
     console.log(response.data);
     setLoaded(true);
-    setForecast(response.data.daily);
+    setForecast(response.data);
+    console.log(forecast);
   }
 
   if (loaded) {
     return (
       <div className="weatherForecast">
-        <div className="weatherForecast-day">Thur</div>
-        <WeatherIcon code="10d" size={36} />
+        <div className="weatherForecast-day">{forecast.list[0].dt}</div>
+        <WeatherIcon code={forecast.list[0].weather[0].icon} size={36} />
         <div>
-          <span className="weatherForecast-max">25°</span>
-          <span className="weatherForecast-min">21°</span>
+          <span className="weatherForecast-max">
+            {forecast.list[0].main.temp_max}
+          </span>
+          <span className="weatherForecast-min">
+            {forecast.list[0].main.temp_min}
+          </span>
         </div>
       </div>
     );
