@@ -10,14 +10,24 @@ export default function WeatherForecast(props) {
   function showForecast(response) {
     console.log(response.data);
     setLoaded(true);
-    setForecast(response.data);
+    setForecast(response.data.list);
     console.log(forecast);
   }
 
   if (loaded) {
     return (
       <div className="weatherForecast">
-        <WeatherForecastDay forecastData={forecast} />
+        <div className="row">
+          {forecast.map(function (dailyForecast, index) {
+            if (index % 8 == 0) {
+              return (
+                <div className="col" key={index}>
+                  <WeatherForecastDay forecastData={dailyForecast} />
+                </div>
+              );
+            }
+          })}
+        </div>
       </div>
     );
   } else {
